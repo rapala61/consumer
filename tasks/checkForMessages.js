@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const dotenv = require('dotenv').config({ silent: true });
 
 const Consumer = require('../lib/consumer');
@@ -9,6 +8,12 @@ const emailHelper = new EmailHelper();
 
 const consumer = new Consumer();
 
+/**
+ * Uses the consumer instance to get a message from the message bus
+ * and email the payload to an address
+ * @param {string} the queue name
+ * @param {function} the callback to be executed when a message has been retrieved
+ */
 consumer.consumeMessage('sign_up', (msg) => {
   const msgBody = JSON.parse(msg.content.toString());
   const emailBody = `
