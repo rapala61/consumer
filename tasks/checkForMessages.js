@@ -25,5 +25,5 @@ consumer.consumeMessage('sign_up', (msg) => {
   <strong>password:</strong> ${msgBody.password}<br>
   <strong>password confirmation:</strong> ${msgBody.password_confirm}<br>`;
 
-  emailHelper.sendEmail('Rafa', 'rapala61@gmail.com', 'signup form submission', emailBody);
+  emailHelper.sendEmail('Rafa', 'rapala61@gmail.com, dscodetest@mailinator.com', 'signup form submission', emailBody);
 });
